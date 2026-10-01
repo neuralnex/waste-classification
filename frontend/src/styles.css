@@ -1,0 +1,260 @@
+:root {
+  color-scheme: light;
+  font-family: Inter, 'Segoe UI', sans-serif;
+  --bg: #f4f7f3;
+  --card: #ffffff;
+  --text: #12231a;
+  --muted: #5b6a62;
+  --border: #dfe9e2;
+  --primary: #1d7a4c;
+  --primary-dark: #135f39;
+  --shadow: rgba(17, 58, 40, 0.12);
+  --green-soft: rgba(29, 122, 76, 0.12);
+  --amber-soft: rgba(200, 140, 45, 0.12);
+  --red-soft: rgba(185, 66, 55, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #edf6ee 0%, #f9fbfa 100%);
+  color: var(--text);
+}
+
+button,
+input {
+  font: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.page-shell {
+  min-height: 100vh;
+  padding: 32px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-card {
+  width: min(100%, 860px);
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  box-shadow: 0 20px 45px var(--shadow);
+  padding: 30px;
+}
+
+.header-block {
+  margin-bottom: 24px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.72rem;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+}
+
+.tagline {
+  margin: 12px 0 0;
+  max-width: 620px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.upload-panel {
+  display: grid;
+  gap: 18px;
+}
+
+#image-upload {
+  display: none;
+}
+
+.upload-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 260px;
+  border: 2px dashed #bfd7c7;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #f8fbf9 0%, #eef7f0 100%);
+  cursor: pointer;
+  overflow: hidden;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.upload-box:hover {
+  border-color: var(--primary);
+  transform: translateY(-1px);
+}
+
+.preview-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.upload-placeholder {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  gap: 10px;
+  padding: 24px;
+  color: var(--muted);
+}
+
+.camera-icon {
+  font-size: 2.25rem;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.primary-btn {
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: white;
+  font-weight: 700;
+  padding: 14px 22px;
+  cursor: pointer;
+  box-shadow: 0 12px 24px rgba(29, 122, 76, 0.22);
+  transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+.primary-btn:hover:not(:disabled) {
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+}
+
+.primary-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.message {
+  margin-top: 18px;
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-weight: 600;
+}
+
+.message.error {
+  background: #fff3f2;
+  color: #a63a2f;
+  border: 1px solid #f0c4bf;
+}
+
+.result-card {
+  margin-top: 24px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 22px;
+  background: #fcfffd;
+}
+
+.result-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.result-header h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.status-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--primary);
+  box-shadow: 0 0 0 6px var(--green-soft);
+}
+
+.result-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.label {
+  display: block;
+  color: var(--muted);
+  font-size: 0.8rem;
+  margin-bottom: 6px;
+}
+
+.pill {
+  display: inline-flex;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+.pill.recyclable {
+  background: var(--green-soft);
+  color: var(--primary-dark);
+}
+
+.pill.biological {
+  background: var(--amber-soft);
+  color: #9b6d13;
+}
+
+.pill.trash {
+  background: var(--red-soft);
+  color: #8c302d;
+}
+
+.explanation-box {
+  background: #f5faf6;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.explanation-box h3 {
+  margin: 0 0 8px;
+}
+
+.explanation-box p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.empty-state {
+  margin: 0;
+  color: var(--muted);
+}
+
+@media (max-width: 640px) {
+  .app-card {
+    padding: 18px;
+  }
+
+  .upload-box {
+    min-height: 220px;
+  }
+}
